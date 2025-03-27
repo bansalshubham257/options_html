@@ -1,0 +1,207 @@
+<div class="post-body entry-content float-container" id="post-body-3712699881015617960">
+<!--DOCTYPE html-->
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track live options order flow and detect large trades in real-time. AI-powered stock analysis available.">
+    <meta name="keywords" content="Options Order Tracker, Live Trading Data, AI Stock Analysis, Large Orders, Trading Strategies">
+    <meta name="author" content="Swing Trading With Me">
+    <meta property="og:title" content="Live Options Order Tracker">
+    <meta property="og:description" content="Detect large orders in real-time and analyze stocks instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swingtradingwithme.blogspot.com/2025/03/test-option-data.html">
+    <title>Live Options Order Tracker | AI Stock Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .order {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .buy { color: green; font-weight: bold; }
+        .sell { color: red; font-weight: bold; }
+        .analysis-link {
+            padding: 6px 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .analysis-link:hover { background-color: #0056b3; }
+        .loading-container {
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border: 4px solid rgba(0, 123, 255, 0.3);
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #orders {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+    </style>
+
+
+    <div class="container">
+        <h1>Live Options Order Tracker</h1>
+        <p>Detect large orders and analyze stock trends in real-time.</p>
+        <div class="loading-container" id="loading">
+            <div class="spinner"></div>
+            <p>🔄 Fetching new orders... Keep this page open.</p>
+        </div>
+        <p id="status">Large orders detected:</p>
+        <div id="orders"><div class="order">
+                        <div><span class="buy">📈 Buying 447 lots</span> in <strong>ASIANPAINT 2300 CE</strong> at 59.0 around 09:17 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=ASIANPAINT" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 100 lots</span> in <strong>SJVN 5 PE</strong> at 3.1 around 09:19 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=SJVN" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 100 lots</span> in <strong>INDIANB 540 CE</strong> at 25.2 around 09:20 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=INDIANB" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 121 lots</span> in <strong>LTF 5 CE</strong> at 3.65 around 09:20 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=LTF" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="sell">📉 Selling 409 lots</span> in <strong>RELIANCE 1300 CE</strong> at 25.8 around 09:27 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=RELIANCE" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 137 lots</span> in <strong>CANBK 90 CE</strong> at 2.9 around 09:54 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=CANBK" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="sell">📉 Selling 127 lots</span> in <strong>NCC 220 CE</strong> at 7.9 around 10:04 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=NCC" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="sell">📉 Selling 205 lots</span> in <strong>VEDL 490 CE</strong> at 7.85 around 10:06 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=VEDL" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 115 lots</span> in <strong>RECLTD 460 CE</strong> at 10.65 around 10:08 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=RECLTD" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 100 lots</span> in <strong>TATATECH 670 PE</strong> at 21.25 around 10:12 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=TATATECH" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 95 lots</span> in <strong>ICICIBANK 1340 CE</strong> at 39.25 around 11:14 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=ICICIBANK" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="sell">📉 Selling 100 lots</span> in <strong>CUMMINSIND 3050 CE</strong> at 136.7 around 11:15 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=CUMMINSIND" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="sell">📉 Selling 448 lots</span> in <strong>LT 3400 PE</strong> at 34.85 around 11:15 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=LT" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 107 lots</span> in <strong>MARUTI 11800 CE</strong> at 329.15 around 11:28 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=MARUTI" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 100 lots</span> in <strong>DELHIVERY 245 PE</strong> at 8.25 around 11:44 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=DELHIVERY" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="sell">📉 Selling 100 lots</span> in <strong>ICICIGI 1800 PE</strong> at 68.65 around 11:53 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=ICICIGI" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 192 lots</span> in <strong>BANKNIFTY 51500 PE</strong> at 667.75 around 12:04 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=BANKNIFTY" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="sell">📉 Selling 100 lots</span> in <strong>PAGEIND 42000 PE</strong> at 1300.0 around 13:06 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=PAGEIND" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 174 lots</span> in <strong>GRANULES 470 PE</strong> at 15.2 around 13:08 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=GRANULES" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 100 lots</span> in <strong>ATGL 580 PE</strong> at 22.15 around 13:21 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=ATGL" target="_blank">🔍 Analyze</a>
+                    </div><div class="order">
+                        <div><span class="buy">📈 Buying 90 lots</span> in <strong>LTF 160 CE</strong> at 2.15 around 13:45 </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=LTF" target="_blank">🔍 Analyze</a>
+                    </div></div>
+    </div>
+    
+    <script>
+      function formatTimeIST(timestamp) {
+          const date = new Date(timestamp);
+          date.setHours(date.getHours() + 5); // Add 5 hours
+          date.setMinutes(date.getMinutes() + 30); // Add 30 minutes
+          return date.getHours().toString().padStart(2, '0') + ":" + date.getMinutes().toString().padStart(2, '0');
+      }
+
+        async function fetchOrders() {
+            try {
+                let response = await fetch('https://option-chain-python.onrender.com/get-orders');
+                let data = await response.json();
+                const ordersDiv = document.getElementById('orders');
+                const statusDiv = document.getElementById('status');
+
+                if (data.status === "Market is closed") {
+                    statusDiv.innerText = '🚨 Market is closed. Will start fetching orders once market opens or new orders are detected.';
+                    document.getElementById('loading').style.display = 'none';
+                    return;
+                }
+
+                if (data.length === 0) {
+                    statusDiv.innerText = 'No large orders detected.';
+                    return;
+                }
+
+                statusDiv.innerText = 'Large orders detected:';
+                ordersDiv.innerHTML = '';
+
+                data.forEach(order => {
+                    let action = order.bid_qty > order.ask_qty 
+                        ? `<span class="buy">📈 Buying ${order.bid_qty / order.lot_size} lots</span>`
+                        : `<span class="sell">📉 Selling ${order.ask_qty / order.lot_size} lots</span>`;
+
+                    let orderElement = document.createElement('div');
+                    orderElement.classList.add('order');
+                    orderElement.innerHTML = `
+                        <div>${action} in <strong>${order.stock} ${order.strike_price} ${order.type}</strong> at ${order.ltp} around ${formatTimeIST(order.timestamp)} </div>
+                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=${order.stock}" target="_blank">🔍 Analyze</a>
+                    `;
+
+                    ordersDiv.appendChild(orderElement);
+                });
+                ordersDiv.scrollTop = ordersDiv.scrollHeight;
+            } catch (error) {
+                document.getElementById('status').innerText = '&#9888;&#65039; Error fetching data';
+                console.error('Error:', error);
+            }
+        }
+        setInterval(fetchOrders, 30000);
+    </script>
+
+
+</div>
