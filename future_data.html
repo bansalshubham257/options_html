@@ -333,6 +333,9 @@
                     console.error('Error:', error);
                 });
         }
+	    window.onload = function() {
+    fetchOrders();
+};
         setInterval(fetchOrders, 24000);
     </script>
 
