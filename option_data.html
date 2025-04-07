@@ -152,13 +152,17 @@
     </div>
     
     <script>
-      function formatTimeIST(timestamp) {
-          const date = new Date(timestamp);
-          date.setHours(date.getHours() + 5); // Add 5 hours
-          date.setMinutes(date.getMinutes() + 30); // Add 30 minutes
-          return date.getHours().toString().padStart(2, '0') + ":" + date.getMinutes().toString().padStart(2, '0');
-      }
-
+      
+        function formatTimeIST(timestamp) {
+        const date = new Date(timestamp);
+        // Convert to IST (UTC+5:30)
+        return date.toLocaleTimeString('en-IN', {
+            timeZone: 'Asia/Kolkata',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+        });
+    }
         async function fetchOrders() {
             try {
                 let response = await fetch('https://aitradinglabrailway-production.up.railway.app/get-orders');
@@ -189,7 +193,7 @@
                     orderElement.classList.add('order');
                     orderElement.innerHTML = `
                         <div>${action} in <strong>${order.stock} ${order.strike_price} ${order.type}</strong> at ${order.ltp} around ${formatTimeIST(order.timestamp)} </div>
-                        <a class="analysis-link" href="https://swingtradingwithme.blogspot.com/2025/03/ai-powered-stock-analysis-instantly.html?stock=${order.stock}" target="_blank">🔍 Analyze</a>
+                        <a class="analysis-link" href="https://www.aitradinglab.in/2025/04/ai-powered-stock-analysis-instantly.html?stock=${order.stock}" target="_blank">🔍 Analyze</a>
                     `;
 
                     ordersDiv.appendChild(orderElement);
