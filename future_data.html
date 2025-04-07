@@ -284,11 +284,15 @@
     
     <script>
       	function formatTimeIST(timestamp) {
-          const date = new Date(timestamp);
-          date.setHours(date.getHours() + 5); // Add 5 hours
-          date.setMinutes(date.getMinutes() + 30); // Add 30 minutes
-          return date.getHours().toString().padStart(2, '0') + ":" + date.getMinutes().toString().padStart(2, '0');
-      }
+        const date = new Date(timestamp);
+        // Convert to IST (UTC+5:30)
+        return date.toLocaleTimeString('en-IN', {
+            timeZone: 'Asia/Kolkata',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+        });
+    }
         function fetchOrders() {
             fetch('https://aitradinglabrailway-production.up.railway.app/get-futures-orders')
                 .then(response => response.json())
