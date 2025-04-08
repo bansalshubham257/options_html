@@ -294,7 +294,7 @@
         });
     }
         function fetchOrders() {
-            fetch('https://aitradinglabrailway.onrender.com/get-futures-orders')
+            fetch('https://aitradinglabrailway-production.up.railway.app/get-futures-orders')
                 .then(response => response.json())
                 .then(data => {
                     const ordersDiv = document.getElementById('orders');
