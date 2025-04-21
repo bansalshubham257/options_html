@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Gainer Strikes</title>
+    <style>
+        /* Add modern table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:hover {
+            background-color: #f1f1f1; /* Change row color on hover */
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Most Gainer Strikes</h1>
+    <table id="gainer-strikes-table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Strike Price</th>
+                <th>Option Type</th>
+                <th>% Change</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be dynamically loaded -->
+        </tbody>
+    </table>
+    <button id="load-more">Load More</button>
+
+    <script>
+        let offset = 0;
+        const limit = 10;
+
+        async function fetchGainerStrikes() {
+            const response = await fetch(`http://127.0.0.1:10000/api/most-gainer-strikes?limit=${limit}&offset=${offset}`);
+            const data = await response.json();
+            const tableBody = document.querySelector("#gainer-strikes-table tbody");
+
+            data.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${row.symbol}</td>
+                    <td>${row.strike_price}</td>
+                    <td>${row.option_type}</td>
+                    <td>${row.pct_change.toFixed(2)}%</td>
+                    <td>${row.price}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+
+            offset += limit;
+        }
+
+        document.getElementById("load-more").addEventListener("click", fetchGainerStrikes);
+
+        // Initial load
+        fetchGainerStrikes();
+    </script>
+</body>
+</html>
