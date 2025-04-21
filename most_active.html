@@ -60,7 +60,7 @@
         const limit = 10;
 
         async function fetchActiveStrikes() {
-            const response = await fetch(`http://127.0.0.1:10000/api/most-active-strikes?limit=${limit}&offset=${offset}`);
+            const response = await fetch(`https://aitradinglabrailway.onrender.com/api/most-active-strikes?limit=${limit}&offset=${offset}`);
             const data = await response.json();
             const tableBody = document.querySelector("#active-strikes-table tbody");
 
