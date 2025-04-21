@@ -35,24 +35,31 @@
         button:hover {
             background-color: #0056b3; /* Darker blue on hover */
         }
+        .table-container {
+            max-height: 400px; /* Limit the height of the table container */
+            overflow-y: auto; /* Enable vertical scrolling */
+            border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+        }
     </style>
 </head>
 <body>
     <h1>Most Active Strikes</h1>
-    <table id="active-strikes-table">
-        <thead>
-            <tr>
-                <th>Symbol</th>
-                <th>Strike Price</th>
-                <th>Option Type</th>
-                <th>Volume</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Data will be dynamically loaded -->
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table id="active-strikes-table">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Strike Price</th>
+                    <th>Option Type</th>
+                    <th>Volume</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be dynamically loaded -->
+            </tbody>
+        </table>
+    </div>
     <button id="load-more">Load More</button>
 
     <script>
