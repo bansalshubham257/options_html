@@ -35,61 +35,54 @@
         button:hover {
             background-color: #0056b3; /* Darker blue on hover */
         }
-        .table-container {
-            max-height: 400px; /* Limit the height of the table container */
-            overflow-y: auto; /* Enable vertical scrolling */
-            border: 1px solid #ddd; /* Optional: Add a border for better visibility */
-        }
     </style>
 </head>
 <body>
-    <h1>Most Gainer Strikes</h1>
-    <div class="table-container">
-        <table id="gainer-strikes-table">
-            <thead>
-                <tr>
-                    <th>Symbol</th>
-                    <th>Strike Price</th>
-                    <th>Option Type</th>
-                    <th>% Change</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Data will be dynamically loaded -->
-            </tbody>
-        </table>
-    </div>
-    <button id="load-more">Load More</button>
+<h1>Most Gainer Strikes</h1>
+<table id="gainer-strikes-table">
+    <thead>
+    <tr>
+        <th>Symbol</th>
+        <th>Strike Price</th>
+        <th>Option Type</th>
+        <th>% Change</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Data will be dynamically loaded -->
+    </tbody>
+</table>
+<button id="load-more">Load More</button>
 
-    <script>
-        let offset = 0;
-        const limit = 10;
+<script>
+    let offset = 0;
+    const limit = 10;
 
-        async function fetchGainerStrikes() {
-            const response = await fetch(`https://aitradinglabrailway.onrender.com/api/most-gainer-strikes?limit=${limit}&offset=${offset}`);
-            const data = await response.json();
-            const tableBody = document.querySelector("#gainer-strikes-table tbody");
+    async function fetchGainerStrikes() {
+        const response = await fetch(`https://aitradinglabrailway.onrender.com/api/most-gainer-strikes?limit=${limit}&offset=${offset}`);
+        const data = await response.json();
+        const tableBody = document.querySelector("#gainer-strikes-table tbody");
 
-            data.forEach(row => {
-                const tr = document.createElement("tr");
-                tr.innerHTML = `
-                    <td>${row.symbol}</td>
-                    <td>${row.strike_price}</td>
-                    <td>${row.option_type}</td>
-                    <td>${row.pct_change.toFixed(2)}%</td>
-                    <td>${row.price}</td>
-                `;
-                tableBody.appendChild(tr);
-            });
+        data.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${row.symbol}</td>
+                <td>${row.strike_price}</td>
+                <td>${row.option_type}</td>
+                <td>${row.pct_change.toFixed(2)}%</td>
+                <td>${row.price}</td>
+            `;
+            tableBody.appendChild(tr);
+        });
 
-            offset += limit;
-        }
+        offset += limit;
+    }
 
-        document.getElementById("load-more").addEventListener("click", fetchGainerStrikes);
+    document.getElementById("load-more").addEventListener("click", fetchGainerStrikes);
 
-        // Initial load
-        fetchGainerStrikes();
-    </script>
+    // Initial load
+    fetchGainerStrikes();
+</script>
 </body>
 </html>
